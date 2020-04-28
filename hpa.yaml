@@ -1,0 +1,14 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: go-hpa
+  namespace: default
+spec:
+  minReplicas: 1
+  maxReplicas: 6
+  scaleTargetRef:  #Faz referencia ao deployment
+    apiVersion: extensions/v1beta1
+    kind: Deployment
+    name: go-hpa #nome do deployment no GCP
+  targetCPUUtilizationPercentage: 15
+    
