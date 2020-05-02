@@ -10,9 +10,9 @@ import (
 
 func loop() float64 {
 	x := 0.0001
-	for index := 0; index < 100000000; index++ {
+	for index := 0; index < 10000000; index++ {
 		x = x + math.Sqrt(x)
-		// fmt.Println(x)
+		fmt.Println(x)
 	}
 	return x
 }

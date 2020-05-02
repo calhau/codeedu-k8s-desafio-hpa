@@ -1,0 +1,31 @@
+steps:
+
+- id: "Rodando docker-compose"
+  name: 'gcr.io/$PROJECT_ID/docker-compose'
+  args: ['-f', 'docker-compose.cloudbuild.yaml', 'up', '-d']  
+
+- id: "Rodando docker ps - Verificar 2 containers test/prod"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['ps']  
+
+- id: "Rodando o ls no containerTest Go para ver se temos o arquivo test"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['exec', '-t', 'k8s-desafio-hpa-go-container_test', 'ls']    
+
+- id: "Rodando o test da app GO"
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['exec', '-t', 'k8s-desafio-hpa-go-container_test', 'go', 'test']  
+ 
+- id: "Agora que passei nos testes vou executar o container com o codigo pra ser buildado"  
+  name: 'gcr.io/cloud-builders/docker'
+  args: ['exec', '-t', 'k8s-desafio-hpa-go', 'go', 'build','bruno.go']  
+
+- id: "Gerar build da imagem"
+  name: 'gcr.io/cloud-builders/docker'
+  args:
+  - 'build'
+  - '-t'
+  - 'gcr.io/$PROJECT_ID/k8s-desafio-hpa-go:0.0.1'
+  - '.'
+images:
+- 'gcr.io/$PROJECT_ID/k8s-desafio-hpa-go:0.0.1'
