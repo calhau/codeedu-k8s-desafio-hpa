@@ -7,7 +7,7 @@ spec:
   minReplicas: 1
   maxReplicas: 6
   scaleTargetRef:  #Faz referencia ao deployment
-    apiVersion: extensions/v1beta1
+    apiVersion: apps/v1
     kind: Deployment
     name: go-hpa #nome do deployment no GCP
   targetCPUUtilizationPercentage: 15

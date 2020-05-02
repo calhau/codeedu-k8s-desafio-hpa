@@ -1,5 +1,7 @@
 version: '3'
 services: 
+    # Criei esse container test, pois ele usa outro dockerfile,
+    # sem ser com a imagem Optimezed para conseguir rodas os testes
     app_test:
         build: ./app/
         container_name: k8s-desafio-hpa-go-container_test

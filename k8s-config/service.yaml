@@ -3,8 +3,9 @@ kind: Service
 metadata:
   name: go-hpa
 spec:
-  type: LoadBalancer
+  #type: LoadBalancer
   ports:
-  - port: 80
+    - port: 80
   selector:
-    app: go-template-label-hpa-desafio
+    app: go-hpa
+

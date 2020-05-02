@@ -6,19 +6,19 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: go-template-label-hpa-desafio
+      app: go-hpa
   template:
     metadata:
       labels:
-        app: go-template-label-hpa-desafio
+        app: go-hpa
     spec:
       containers:
       - name: go-hpa
-        image: lealbruno/codeedu-desafio-go-hpa
+        image: lealbruno/codeedu-desafio-go-hpa        
         resources:
           requests:
-            cpu: 50m
-          limits:
             cpu: 100m
+          limits:
+            cpu: 300m
         ports:
         - containerPort: 80
