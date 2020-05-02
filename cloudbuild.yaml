@@ -16,9 +16,9 @@ steps:
   name: 'gcr.io/cloud-builders/docker'
   args: ['exec', '-t', 'k8s-desafio-hpa-go-container_test', 'go', 'test']  
  
--  id: "Processo de goBUild no container test"
-  name: 'gcr.io/cloud-builders/docker'
-  args: ['exec', '-t', 'k8s-desafio-hpa-go-container_test', 'go', 'build','bruno.go']  
+# -  id: "Processo de goBUild no container test"
+#   name: 'gcr.io/cloud-builders/docker'
+#   args: ['exec', '-t', 'k8s-desafio-hpa-go-container_test', 'go', 'build','bruno.go']  
 
  - id: "Gerar build da imagem optimezed"
   name: 'gcr.io/cloud-builders/docker'
