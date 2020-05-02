@@ -1,3 +1,11 @@
+## Desafio HPA - Bruno Leal
+
+[] - Adicionar aqui
+
+
+
+
+
 ## Informações Bruno
 
 Primeiro criar uma imagem com o dockerfile.
@@ -12,3 +20,6 @@ Depois criar um container com a imagem gerada no passo 1.
 
 docker rm $(docker ps -a -q) -f
 docker rmi $(docker image ls -a -q)
+
+
+
