@@ -1,10 +1,10 @@
 # Desafio HPA - Bruno Leal
 
-[x] - Criar deployment com nome go-hpa
-[x] - Criar service com nome go-hpa
-[x] - Criar nomeDaImage com nome go-hpa
-[x] - Processo de testes sendo executado ao realizar Pull Request(Trigger-GCP)
-[x] - Processo De HPA - deployment executando (*image: lealbruno/codeedu-desafio-go-hpa*)
+[x] - Criar deployment com nome go-hpa  
+[x] - Criar service com nome go-hpa  
+[x] - Criar nomeDaImage com nome go-hpa  
+[x] - Processo de testes sendo executado ao realizar Pull Request(Trigger-GCP)  
+[x] - Processo De HPA - deployment executando(*image: lealbruno/codeedu-desafio-go-hpa*)  
 
 
 ## Docker HUB
