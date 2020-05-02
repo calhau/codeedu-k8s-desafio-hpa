@@ -15,8 +15,17 @@ steps:
 - id: "Rodando o test da app GO"
   name: 'gcr.io/cloud-builders/docker'
   args: ['exec', '-t', 'k8s-desafio-hpa-go-container_test', 'go', 'test']  
+ 
+# -  id: "Processo de goBUild no container test"
+#   name: 'gcr.io/cloud-builders/docker'
+#   args: ['exec', '-t', 'k8s-desafio-hpa-go-container_test', 'go', 'build','bruno.go']  
 
- - id: "Gerar build da imagem optimezed"
+
+#   - id: "Agora que passei nos testes vou executar o container com o codigo pra ser buildado"  
+#   name: 'gcr.io/cloud-builders/docker'
+#   args: ['exec', '-t', 'k8s-desafio-hpa-go', 'go', 'build','bruno.go']  
+
+- id: "Gerar build da imagem"
   name: 'gcr.io/cloud-builders/docker'
   args:
   - 'build'
